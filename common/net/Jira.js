@@ -8,7 +8,6 @@ class Jira {
   constructor ({ baseUrl, token, email }) {
     this.baseUrl = baseUrl
     this.token = token
-    this.email = email
   }
 
   async createIssue (body) {
@@ -74,7 +73,7 @@ class Jira {
     }
 
     if (headers.Authorization === undefined) {
-      headers.Authorization = `Basic ${Buffer.from(`${this.email}:${this.token}`).toString('base64')}`
+      headers.Authorization = `Basic ${this.token}`
     }
 
     // strong check for undefined

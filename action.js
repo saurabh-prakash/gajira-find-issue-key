@@ -13,7 +13,6 @@ module.exports = class {
     this.Jira = new Jira({
       baseUrl: config.baseUrl,
       token: config.token,
-      email: config.email,
     })
 
     this.config = config
